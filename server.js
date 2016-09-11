@@ -43,10 +43,10 @@ app.get('/', function(req, res) {
 });
 
 app.get('/scrape', function(req, res) {
-  request('http://www.usatoday.com/sports/mlb/', function (error, response, html) {
+  request('http://www.indeed.com/jobs?q=web+developer&l=Westchester%2C+NY', function (error, response, html) {
 
     var $ = cheerio.load(html);
-    $('h2.').each(function(i, element){
+    $('.jobtitle').each(function(i, element){
 
       var result = {};
 
@@ -54,7 +54,7 @@ app.get('/scrape', function(req, res) {
       result.link = $(this).parent().attr('href');
       result.excerpt = $(this).parent().siblings('p.excerpt').text();
 
-      var entry = new Article (result);
+    var entry = new Article (result);
 
       entry.save(function(err, doc) {
         if (err) {
