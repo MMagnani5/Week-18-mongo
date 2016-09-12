@@ -19,7 +19,7 @@ app.use(bodyParser.urlencoded({
 app.use(express.static('public'));
 
 // Database configuration created with mongoose
-mongoose.connect('mongodb://localhost/MongoWebArticles');
+mongoose.connect('mongodb://localhost/MongoArticles');
 var db = mongoose.connection;
 
 // show any mongoose errors
@@ -50,9 +50,8 @@ app.get('/scrape', function(req, res) {
 
       var result = {};
 
-      result.title = $(this).text();
-      result.link = $(this).parent().attr('href');
-      result.excerpt = $(this).parent().siblings('p.excerpt').text();
+      result.title = $(this).children('a').text();
+      result.link = $(this).children('a').attr('href');
 
     var entry = new Article (result);
 
