@@ -13,6 +13,8 @@
       height:700px;
       display:inline-block;
       overflow: auto;
+      background-color: #fff;
+      padding-left: 10px;
     }
     #notes{
       width:30%;
@@ -21,7 +23,7 @@
     textarea, input{
       display:block;
       width:100%;
-      background-color: #FCF5C7;
+      background-color: #999966;
     }
     input{
       height:36px;
