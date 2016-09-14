@@ -29,7 +29,7 @@ db.on('error', function(err) {
 
 // log into the db through mongoose
 db.once('open', function() {
-  console.log('Mongoose connection successful.');
+  console.log('Mongoose connection successful!');
 });
 
 // And we bring in our Note and Article models
