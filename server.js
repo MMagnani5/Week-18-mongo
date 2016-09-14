@@ -19,7 +19,7 @@ app.use(bodyParser.urlencoded({
 app.use(express.static('public'));
 
 // Database configuration created with mongoose
-mongoose.connect('mongodb://localhost/MongoArticles');
+mongoose.connect('mongodb://heroku_gvph9wqn:5gmq3cgcrsu61af96t84kaqjl@ds033046.mlab.com:33046/heroku_gvph9wqn/MongoArticles');
 var db = mongoose.connection;
 
 // show any mongoose errors
